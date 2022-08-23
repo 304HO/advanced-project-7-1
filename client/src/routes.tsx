@@ -1,8 +1,14 @@
-// Material Dashboard 2 React layouts
 import Albums from "./pages/Albums";
 import Photos from "./pages/Photos";
 
-const routes = [
+export type RouteType = {
+  name: string;
+  key: string;
+  route: string;
+  component: React.ReactNode;
+};
+
+const routes: Array<RouteType> = [
   {
     name: "albums",
     key: "Albums",

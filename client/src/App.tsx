@@ -1,14 +1,12 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import routes from "./routes";
+import routes, { RouteType } from "./routes";
 
 function App() {
-  const getRoutes = (allRoutes: any) =>
-    allRoutes.map((route: any) => {
-      if (route.route) {
-        return <Route path={route.route} element={route.component} key={route.key} />;
-      }
+  const getRoutes = (allRoutes: Array<RouteType>) =>
+    allRoutes.map((route: RouteType) => {
+      return route.route && <Route path={route.route} element={route.component} key={route.key} />;
     });
   return (
     <div className="App">
