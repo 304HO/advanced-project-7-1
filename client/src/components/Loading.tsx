@@ -6,11 +6,9 @@ import Toggle from "./Toggle";
 
 const lodingAnimation = keyframes`
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 `;
@@ -32,7 +30,6 @@ const StyledLoader = styled.div`
   border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
   border-left: 1.1em solid black;
   transform: translateZ(0);
-  -webkit-animation: ${lodingAnimation} 1s infinite linear;
   animation: ${lodingAnimation} 1s infinite linear;
   &,
   & :after {

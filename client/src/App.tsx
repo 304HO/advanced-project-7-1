@@ -9,6 +9,7 @@ import LightTheme from "./assets/theme/light";
 import DarkTheme from "./assets/theme/dark";
 
 import storage from "./common/utils/storage";
+import Footer from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState(storage.getTheme());
@@ -32,6 +33,7 @@ function App() {
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
