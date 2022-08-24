@@ -13,7 +13,6 @@ function Albums() {
     try {
       const res = await albumsApi.getAllAlbums();
       setAlbums(res);
-      console.log(res);
     } catch (err) {
       console.log(err);
     }
@@ -24,7 +23,7 @@ function Albums() {
   }, []);
 
   const detailHandler = (id: number) => {
-    navigator(`/albums/${id}`);
+    navigator(`/photos/${id}`);
   };
 
   return (

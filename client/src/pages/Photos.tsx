@@ -2,25 +2,26 @@ import { useEffect, useState } from "react";
 import "../App.css";
 import photosApi from "../apis/api/photos";
 import Photo from "../components/Photo";
-import styled from "styled-components";
+import { PhotosWrap } from "./Photos.style";
 import { useParams } from "react-router-dom";
 
-const PhotosWrap = styled.div`
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-`;
+type Params = {
+  albumId: String;
+};
 
 function Photos() {
-  let { params } = useParams();
-  const [photos, setPhotos] = useState([]);
+  let { albumId } = useParams();
 
-  console.log(params);
+  const [photos, setPhotos] = useState([]);
+  console.log(albumId);
 
   const getPhotosList = async () => {
-    const res = await photosApi.getAllPhotos();
-    setPhotos(res);
+    try {
+      const res = await photosApi.getAllPhotos(3);
+      setPhotos(res);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
@@ -32,7 +33,6 @@ function Photos() {
       <div>{params}</div>
       <PhotosWrap>
         {photos.map((data: any, idx) => {
-          console.log(data);
           return <Photo key={idx} props={data} />;
         })}
       </PhotosWrap>
