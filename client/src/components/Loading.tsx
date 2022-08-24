@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import "../App.css";
 import styled, { keyframes } from "styled-components";
-import lightLogo from "./../assets/images/codestates-white.png";
-import Toggle from "./Toggle";
 
 const lodingAnimation = keyframes`
   0% {

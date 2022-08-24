@@ -1,17 +1,20 @@
+import React, { memo } from "react";
 import { Title } from "./Photo.style";
 
-const Photo = (props: any) => {
-  const { title, thumbnailUrl } = props.props;
+type PhotoPropsType = {
+  title: string;
+  thumbnailUrl: string;
+  url: string;
+  modalhandler: (url: string) => void;
+};
 
-  //? 전체 props.props
-  // const { albumId, id, title, url, thumbnailUrl } = props.props;
-
+const Photo = ({ title, thumbnailUrl, url, modalhandler }: PhotoPropsType) => {
   return (
-    <div>
+    <div onClick={() => modalhandler(url)}>
       <img src={thumbnailUrl} alt="err" />
       <Title>{title}</Title>
     </div>
   );
 };
 
-export default Photo;
+export default memo(Photo);
