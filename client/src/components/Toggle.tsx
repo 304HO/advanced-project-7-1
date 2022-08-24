@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import styled, { keyframes, useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { ThemeType } from "../types/theme";
 
 const StyledButton = styled.button`
@@ -8,15 +8,13 @@ const StyledButton = styled.button`
   align-items: center;
   position: fixed;
   right: 2em;
-  height: 2em;
+  height: 1.6em;
   width: 4em;
   padding: 0;
-  border: 0px black solid;
   border-radius: 1em;
   background: ${(props) => (props.theme.id === "light" ? "white" : "gray")};
   transition-duration: 0.8s;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09), 0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
-    0 32px 16px rgba(0, 0, 0, 0.09);
+  border: ${(props) => `1px solid ${props.theme.primaryColor}`};
 `;
 
 const StyledToggle = styled.div`
