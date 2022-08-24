@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
 export const PhotoContainer = styled.div`
-  height: 100vh;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 3vw;
   display: flex;
   justify-content: center;
-  padding-top: 3vw;
+  gap: 2vw;
 `;
 
 export const PhotosWrap = styled.div`
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, 200px);
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
 `;

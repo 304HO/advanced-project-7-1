@@ -14,14 +14,14 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 `;
 
-const Modala = styled.div`
-  position: fixed;
-  top: 25%;
-  left: 35%;
+const ModalDiv = styled.div`
   z-index: 1000;
 `;
 
@@ -30,8 +30,9 @@ export default function Modal({ open, children, onClose }: ModalPropsType) {
 
   return ReactDom.createPortal(
     <>
-      <Overlay onClick={onClose} />
-      <Modala onClick={onClose}>{children}</Modala>
+      <Overlay onClick={onClose}>
+        <ModalDiv onClick={onClose}>{children}</ModalDiv>
+      </Overlay>
     </>,
     document.getElementById("portal") as HTMLElement
   );

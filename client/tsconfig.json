@@ -19,7 +19,7 @@
       {
         "name": "typescript-styled-plugin",
         "lint": {
-          "validProperties": ["animation-timing-funciton"]
+          "validProperties": ["animation-timing-funciton", "-webkit-box-shadow"]
         }
       }
     ]

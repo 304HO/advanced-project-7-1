@@ -27,9 +27,8 @@ const StyledBackButton = styled.button`
   border-radius: 100%;
   background-color: ${(props) => props.theme.primaryColor};
   color: white;
-  height: 3em;
-  width: 3em;
   left: 2em;
+  top: 1em;
 `;
 
 function Header() {

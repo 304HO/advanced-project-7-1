@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   align-items: center;
   position: fixed;
   right: 2em;
+  top: 1em;
   @media (max-width: 250px) {
     right: 0em;
   }
