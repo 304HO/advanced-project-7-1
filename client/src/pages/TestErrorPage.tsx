@@ -11,13 +11,13 @@ type AlbumsType = {
 
 function TestErrorPage() {
   const [state, setState] = React.useState<Array<AlbumsType> | null>(null);
-  React.useEffect(() => {
-    const setAlbums = async () => {
-      const albums = await albumsApi.getAllAlbums();
-      setState(albums);
-    };
-    setAlbums();
-  }, []);
+  // React.useEffect(() => {
+  //   const setAlbums = async () => {
+  //     const albums = await albumsApi.getAllAlbums();
+  //     setState(albums);
+  //   };
+  //   setAlbums();
+  // }, []);
 
   if (state === null) {
     return <Loading></Loading>;

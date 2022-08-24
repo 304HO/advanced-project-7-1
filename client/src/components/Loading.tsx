@@ -18,28 +18,34 @@ const StyledDivCenter = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 80%;
+  margin: 3em 0 3em 0;
 `;
 
 const StyledLoader = styled.div`
   background: ${(props) => props.theme.background};
-  width: 100px;
-  height: 100px;
-  font-size: 0.2em;
-  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-  border-left: 1.1em solid black;
+  width: inherit;
+  height: inherit;
+  font-size: 0.2rem;
+  border-top: 3em solid rgba(255, 255, 255, 0.2);
+  border-right: 3em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 3em solid rgba(255, 255, 255, 0.2);
+  border-left: 3em solid black;
   transform: translateZ(0);
   animation: ${lodingAnimation} 1s infinite linear;
   &,
   & :after {
     border-radius: 50%;
-    width: 10em;
-    height: 10em;
+    width: 100em;
+    height: 100em;
   }
 `;
 
-const StyledLoadingFont = styled.span``;
+const StyledLoadingFont = styled.span`
+  margin-top: 3em;
+  font-size: 3em;
+`;
 
 function Loading() {
   const [loadingPoing, setLoadingPoint] = React.useState<string>(".");
@@ -49,7 +55,7 @@ function Loading() {
         console.log(prev.length);
         return ".".repeat((prev.length + 1) % 4);
       });
-    }, 1000);
+    }, 300);
     return () => {
       clearInterval(interval);
     };

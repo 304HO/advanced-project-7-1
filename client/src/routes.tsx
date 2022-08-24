@@ -20,7 +20,7 @@ const routes: Array<RouteType> = [
   {
     name: "photos",
     key: "Photos",
-    route: "/photos",
+    route: "/photos/:id",
     component: <Photos />
   },
   {

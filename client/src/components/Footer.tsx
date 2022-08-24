@@ -4,7 +4,8 @@ import styled from "styled-components";
 import blueLogo from "./../assets/images/codestates-blue.png";
 
 const StyledFooter = styled.footer`
-  position: fixed;
+  position: sticky;
+  margin-top: 1em;
   width: 100%;
   height: 50px;
   bottom: 0;
