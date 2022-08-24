@@ -7,7 +7,6 @@ const axiosApi = axios.create({
 
 axiosApi.interceptors.request.use(
   function (config) {
-    console.log("before", config);
     return config;
   },
   function (error) {
@@ -18,12 +17,10 @@ axiosApi.interceptors.request.use(
 
 axiosApi.interceptors.response.use(
   function (response) {
-    console.log("response", response);
     return response;
   },
   function (error) {
     window.location.href = "/404";
-    console.log("navigate after");
     return Promise.reject(error);
   }
 );
